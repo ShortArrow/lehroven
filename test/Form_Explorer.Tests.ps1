@@ -2,7 +2,7 @@
 
 Describe "Explorer" {
     BeforeAll {
-        [string]$machine = Get-FormingMachine($PSCommandPath)
+        [string]$machine = Get-FormingMachine $PSCommandPath
         . $machine
     }
 
