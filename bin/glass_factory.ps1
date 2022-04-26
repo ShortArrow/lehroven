@@ -4,7 +4,9 @@ function Get-Here {
 function Get-FormingMachineHangar {
     return "$(Get-Here)/forming machines"
 }
-
+function Get-TestingMachineHangar {
+    return "$(Get-Here)/test"
+}
 function Get-FormingMachine {
     param ([string]$parent)
     $sut = (Split-Path -Leaf $parent) -replace ".Tests.", "."
