@@ -16,14 +16,19 @@ Describe `"template`" {
         [string]`$machine = Get-FormingMachine `$PSCommandPath
         . `$machine
     }
-
+    
     It `"template`" {
         `$true | Should -Be `$true
+    }
+    It `"$($StateName)`" {
+        [string](Get-$($StateName)) | Should -Be `"isHidden`"
     }
 }
 ">$TestFilePath
 
-Write-Output "function Get-$($StateName)State {
+$StateName = "$($StateName)State"
+
+Write-Output "function Get-$($StateName) {
     param ()
     `$regpath = `"Registry::HKEY_CURRENT_USER\xxx\xxx`"
     `$state = (Get-Item -Path `$regpath).GetValue(`"template`")
