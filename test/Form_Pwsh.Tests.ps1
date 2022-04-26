@@ -8,7 +8,10 @@ Describe "Powershell" {
     It "found Machine" {
         Test-Path "function:Get-PowershellVersion" | Should -BeTrue
     }
-    It "Powershell Version is Core" {
+    It "Powershell Version" {
         Get-PowershellVersion | Should -BeGreaterThan 6
+    }
+    It "Powershell Version" {
+        [string](Get-PSEditionState) | Should -Be "isCore"
     }
 }
