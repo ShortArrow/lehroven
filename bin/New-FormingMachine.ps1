@@ -1,13 +1,29 @@
 . bin/glass_factory.ps1
 
-
-$NewName = (Read-Host -Prompt "New Name of Forming Machine")
-$TestFileName = "Form_$NewName.Tests.ps1"
-$TestFilePath = "$(Get-TestingMachineHangar)/$($TestFileName)"
-$FormFileName = "Form_$NewName.ps1"
-$FormFilePath = "$(Get-FormingMachineHangar)/$($FormFileName)"
-
-$StateName = (Read-Host -Prompt "Name of State")
+while ($true) {
+    $NewName = (Read-Host -Prompt "New Name of Forming Machine")
+    $TestFileName = "Form_$NewName.Tests.ps1"
+    $TestFilePath = "$(Get-TestingMachineHangar)/$($TestFileName)"
+    $FormFileName = "Form_$NewName.ps1"
+    $FormFilePath = "$(Get-FormingMachineHangar)/$($FormFileName)"
+    
+    $StateName = (Read-Host -Prompt "Name of State")
+    $StateName = "$($StateName)State"
+    Write-Host "TestingFileName : (`e[38;5;10m$TestFilePath`e[0m)"
+    Write-Host "FormingFileName : (`e[38;5;10m$FormFilePath`e[0m)"
+    $res = (Read-Host "Ok/No/Cancel[y/n/c]")
+    if ($res -eq "y") {
+        Write-Host "`e[38;5;11mWriting out files`e[0m"
+        break
+    }
+    elseif ($res -eq "c") {
+        Write-Host "`e[38;5;11mCanceled`e[0m"
+        exit
+    }
+    else {
+        Write-Host "`e[38;5;11mAgain`e[0m"
+    }
+}
 
 Write-Output ". bin/glass_factory.ps1
 
@@ -26,7 +42,6 @@ Describe `"template`" {
 }
 ">$TestFilePath
 
-$StateName = "$($StateName)State"
 
 Write-Output "function Get-$($StateName) {
     param ()
