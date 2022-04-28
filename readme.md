@@ -53,6 +53,11 @@ The window is made of multiple panes of glass. Annealing is a part of the proces
 
 ![alt](https://img.shields.io/github/v/release/Powershell/Powershell?label=PowerShell)
 
+## Caution
+
+Global variables are not carried over, between the test machine discovery phase and the test execution phase, because the sessions are different.
+Therefore, any external file read in the `*.Tests.ps1` global must be read again with `BeforeAll{}`.
+
 ## Thanks
 
 - Contributors of [@pester](https://github.com/pester)
