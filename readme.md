@@ -10,12 +10,6 @@ This is a toolkit for automatically inspecting Windows settings.
 
 ![PowerShell](https://img.shields.io/github/v/release/Powershell/Powershell?label=PowerShell) ![Pester](https://img.shields.io/github/v/release/pester/Pester?label=Pester)
 
-## Name
-
->In the manufacture of glass, a lehr oven is a long kiln with an end-to-end temperature gradient, which is used for annealing newly made glass objects that are transported through the temperature gradient either on rollers or on a conveyor belt. The annealing renders glass into a stronger material with fewer internal stresses, and with a lower probability of breaking.
-
-The window is made of multiple panes of glass. Annealing is a part of the process of making the glass, and is the process used to make the shape of the glass precise. This annealing is done by moving the glass in a long kiln. This kiln is the origin of the project name.
-
 ## Words
 
 - Forming Machine
@@ -48,6 +42,12 @@ pwsh -f ".\bin\New-FormingMachine.ps1"
 ```
 
 This will create a template. Rewrite the template.
+
+## Name
+
+>In the manufacture of glass, a lehr oven is a long kiln with an end-to-end temperature gradient, which is used for annealing newly made glass objects that are transported through the temperature gradient either on rollers or on a conveyor belt. The annealing renders glass into a stronger material with fewer internal stresses, and with a lower probability of breaking.
+
+The window is made of multiple panes of glass. Annealing is a part of the process of making the glass, and is the process used to make the shape of the glass precise. This annealing is done by moving the glass in a long kiln. This kiln is the origin of the project name.
 
 ## Dependencies
 
