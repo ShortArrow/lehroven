@@ -18,19 +18,19 @@ function Get-TestingMachineNames {
 }
 
 Describe "Test coverage" {
-    It "Same TestsCount and FormingsCount" {
-        [array]$tests = Get-TestingMachineNames
-        [array]$formings = Get-FormingMachineNames
-        # ($tests.Length -1) | Should -Be $formings.Length 
-    }
-    It "Test Names has Forming Names" {
-        [array]$tests = Get-TestingMachineNames
-        [array]$formings = Get-FormingMachineNames
-        # ($tests.Length -1) | Should -Be $formings.Length 
-        # Todo: Unnecesary?
-    }
-    It "Can extension split" {
-        Split-Path -Extension "asdfg.hjkl" | Should -Be ".hjkl"
-    }
+    # It "Same TestsCount and FormingsCount" {
+    #     [array]$tests = Get-TestingMachineNames
+    #     [array]$formings = Get-FormingMachineNames
+    #     ($tests.Length -1) | Should -Be $formings.Length 
+    # }
+    # It "Test Names has Forming Names" {
+    #     [array]$tests = Get-TestingMachineNames
+    #     [array]$formings = Get-FormingMachineNames
+    #     ($tests.Length -1) | Should -Be $formings.Length 
+    #     Todo: Unnecesary?
+    # }
+    # It "Can extension split" {
+    #     Split-Path -Extension "asdfg.hjkl" | Should -Be ".hjkl"
+    # }
 }
 
