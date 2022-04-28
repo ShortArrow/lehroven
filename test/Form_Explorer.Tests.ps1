@@ -1,4 +1,6 @@
 . bin/glass_factory.ps1
+[string]$machine = Get-FormingMachine $PSCommandPath
+. $machine
 
 Describe "Explorer" {
     BeforeAll {
@@ -7,18 +9,18 @@ Describe "Explorer" {
     }
 
     It "Hide frequent directorys or files" {
-        [string](Get-ShowFrequentState) | Should -Be "isHidden"
+        Get-ShowFrequentState | Should -Be $ShowFrequentState.isHidden
     }
     It "Hide recent acceess derectory of file are isShown" {
-        [string](Get-ShowRecentState) | Should -Be "isHidden"
+        Get-ShowRecentState | Should -Be $ShowRecentState.isHidden
     }
     It "All extensions of file are isShown" {
-        [string](Get-HideFileExtState) | Should -Be "isShown"
+        Get-HideFileExtState | Should -Be $HideFileExtState.isShown
     }
     It "Not Exists Onedrive Link" {
-        [string](Get-OneDriveLinkState) | Should -Be "NotFound"
+        Get-OneDriveLinkState | Should -Be $OneDriveLinkState.NotFound
     }
     It "Disable Onedrive" {
-        [string](Get-OneDriveState) | Should -Be "Enable"
+        Get-OneDriveState | Should -Be $OneDriveState.Enable
     }
 }
