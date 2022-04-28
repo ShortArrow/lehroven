@@ -27,7 +27,7 @@ while ($true) {
 
 Write-Output ". bin/glass_factory.ps1
 
-Describe `"template`" {
+Describe `"$($NewName)`" {
     BeforeAll {
         [string]`$machine = Get-FormingMachine `$PSCommandPath
         . `$machine
